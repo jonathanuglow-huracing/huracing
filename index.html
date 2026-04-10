@@ -22,11 +22,18 @@
 }
     * { box-sizing: border-box; }
     body {
+      font-family: var(--font-main);
+  color: var(--text);
+  background-color: var(--bg);
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
   color: var(--text);
   min-height: 100vh;
   border: 8px solid #000;
+}
+
+h1, h2, h3, .logo {
+  font-family: var(--font-heading);
+}
 
   /* Background Image Properties */
   background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
