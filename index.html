@@ -1,213 +1,131 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Henry Uglow Racing</title>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
 
     <style>
-
         /* Reset and Base Styles */
-
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
 
         body, html {
-
             height: 100%;
-
             font-family: 'Montserrat', sans-serif;
-
             background-color: #111;
-
             overflow: hidden;
-
         }
 
-
         /* Hero Background with Premium Gradient Overlay */
-
         .splash-container {
-
             position: relative;
             width: 100%;
             height: 100vh;
-
-            /* Gradient makes left-side text sharp while keeping the kart visible on the right */
-
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
+            /* Lightened overlays: Text shadow helps readability so the background can be brighter */
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.0) 100%), 
                         url('splash-HU.jpg') center/cover no-repeat;
-
             display: flex;
             align-items: center;
             padding-left: 8%; /* Offsets text to the left third */
-
         }
 
         /* Branding Text Layout */
-
         .brand-content {
-
             max-width: 600px;
-
             color: #ffffff;
-
             z-index: 2;
-
         }
 
         .subtitle {
-
             font-size: 0.9rem;
-
             text-transform: uppercase;
-
             letter-spacing: 6px;
-
             color: #ff5722; /* Racing orange accent color */
-
             margin-bottom: 10px;
-
             font-weight: 700;
-
         }
 
         .main-title {
-
             font-size: 3.5rem;
-
             font-weight: 900;
-
             font-style: italic;
-
             text-transform: uppercase;
-
             line-height: 1.1;
-
             letter-spacing: 2px;
-
             margin-bottom: 30px;
-
-            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-
+            /* Boosted text shadow slightly to protect text contrast against a brighter background */
+            text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.6), 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
 
         /* Modernized Call to Action Button */
-
         .cta-button {
-
             display: inline-block;
-
             text-decoration: none;
-
             color: #ffffff;
-
             font-size: 0.85rem;
-
             font-weight: 700;
-
             text-transform: uppercase;
-
             letter-spacing: 3px;
-
             border: 2px solid #ffffff;
-
             padding: 16px 36px;
-
             border-radius: 4px;
-
             transition: all 0.3s ease-in-out;
-
             background: transparent;
-
+            /* Drop shadow to keep it visible over a brighter photo */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* Smooth Hover Effects */
-
         .cta-button:hover {
-
             background-color: #ffffff;
-
             color: #111111;
-
             transform: translateY(-2px);
-
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-
         }
 
         .cta-button:active {
-
             transform: translateY(0);
-
         }
 
         /* Responsive Design for Mobile Screens */
-
         @media (max-width: 768px) {
             .splash-container {
                 padding-left: 0;
                 justify-content: center;
                 text-align: center;
-
-                /* Darkens the whole image evenly on mobile for centered text readability */
-                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.35)), 
+                /* Lightened mobile overlay evenly for a brighter photo experience */
+                background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15)), 
                             url('splash-HU.jpg') center/cover no-repeat;
-
             }
 
             .main-title {
                 font-size: 2.5rem;
-
             }
 
             .subtitle {
                 font-size: 0.8rem;
                 letter-spacing: 4px;
-
             }
-
         }
-
     </style>
-
 </head>
-
 <body>
 
     <main class="splash-container">
-
         <div class="brand-content">
-
             <p class="subtitle">Official Website</p>
-
             <h1 class="main-title">Henry Uglow<br>Racing</h1>
-
             <a href="home.html" class="cta-button">Enter Site</a>
-
         </div>
-
     </main>
 
 </body>
-
-</html> 
-
+</html>
