@@ -48,21 +48,16 @@
         .splash-container {
 
             position: relative;
-
             width: 100%;
-
             height: 100vh;
 
             /* Gradient makes left-side text sharp while keeping the kart visible on the right */
 
             background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), 
-
                         url('splash-HU.jpg') center/cover no-repeat;
 
             display: flex;
-
             align-items: center;
-
             padding-left: 8%; /* Offsets text to the left third */
 
         }
@@ -168,33 +163,24 @@
         /* Responsive Design for Mobile Screens */
 
         @media (max-width: 768px) {
-
             .splash-container {
-
                 padding-left: 0;
-
                 justify-content: center;
-
                 text-align: center;
 
                 /* Darkens the whole image evenly on mobile for centered text readability */
-
-                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.35)), 
                             url('splash-HU.jpg') center/cover no-repeat;
 
             }
 
             .main-title {
-
                 font-size: 2.5rem;
 
             }
 
             .subtitle {
-
                 font-size: 0.8rem;
-
                 letter-spacing: 4px;
 
             }
