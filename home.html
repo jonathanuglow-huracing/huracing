@@ -7,148 +7,117 @@
    
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --panel: #f4f5f7;
+      /* Switched to a high-end dark theme suitable for motorsport */
+      --bg: #0b0f17;
+      --panel: #161f30;
       --accent: #ff7a1a;
-      --text: #111827;
-      --muted: #6b7280;
-      --card-border: rgba(0, 0, 0, 0.06);
+      --text: #ffffff;
+      --muted: #9ca3af;
+      --card-border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; }
+    
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       color: var(--text);
       min-height: 100vh;
-      border: 8px solid #000;
-
-      /* Background Image Properties */
-      background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
-                        url('images/S/Session10.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+      background-color: var(--bg);
     }
-    header {
-      padding: 72px 6vw 40px;
+
+    /* Hero Section with the background photo isolated at the top */
+    .hero-header {
+      position: relative;
+      padding: 100px 6vw 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 12px;
+      gap: 16px;
+      /* Image is now restricted to just the top header with a dark overlay */
+      background-image: linear-gradient(rgba(11, 15, 23, 0.65), rgba(11, 15, 23, 1)), 
+                        url('images/S/Session10.jpg');
+      background-size: cover;
+      background-position: center 35%;
+      border-bottom: 2px solid rgba(255, 122, 26, 0.2);
     }
-    /* Updated to match the index.html brand font style */
+
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       font-weight: 900;
       font-style: italic;
       color: var(--text);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 6vw, 4rem);
       line-height: 1.1;
+      margin: 0;
     }
-    /* Racing word accent styling */
+
     .brand span {
       color: var(--accent);
-      margin-left: 10px;
     }
-    /* Bold formatting applied to the subtitle class */
+
     .subtitle {
       font-weight: 700;
-      
+      font-size: 0.95rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0;
     }
-    .cta {
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      box-shadow: 0 10px 30px rgba(255, 122, 26, 0.25);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    .tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      max-width: 700px;
+      color: #e5e7eb;
+      font-weight: 600;
+      line-height: 1.4;
+      margin: 15px 0 0 0;
     }
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 32px rgba(255, 122, 26, 0.32);
-    }
-    .hero {
-      padding: 40px 6vw 10px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      align-items: center;
-    }
-    .hero-text h1 {
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
-      margin: 0 0 12px;
-      line-height: 1.1;
-    }
-    .hero-text p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      max-width: 640px;
-      line-height: 1.6;
-    }
-    .badge-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-    .badge {
-      padding: 8px 12px;
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      background: rgba(255,255,255,0.02);
-    }
-    .hero-visual {
-      position: relative;
-      background: linear-gradient(135deg, rgba(255,77,77,0.18), rgba(0,161,255,0.28));
-      border-radius: 16px;
-      overflow: hidden;
-      min-height: 260px;
-      border: 1px solid var(--card-border);
-    }
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      mix-blend-mode: screen;
-      opacity: 0.9;
-    }
+
+    /* Clean Section Headings */
     .section-title {
-      padding: 20px 6vw 10px;
+      padding: 60px 6vw 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      gap: 6px;
     }
+
     .section-title h2 {
-      margin: 0 0 1.5rem;
-      font-size: 1.5rem;
-      letter-spacing: 0.06em;
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: relative;
     }
+
+    /* Added a sleek racing line under season headers */
+    .section-title h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--accent);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Adjusted grid to 4 columns max for better image spacing */
     .grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 16px;
-      padding: 0 6vw 50px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      padding: 0 6vw 40px;
     }
+
+    /* Premium Modern Card Design */
     .card {
       position: relative;
       background: var(--panel);
@@ -157,261 +126,330 @@
       overflow: hidden;
       text-decoration: none;
       color: var(--text);
-      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
     }
+
     .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,77,77,0.5);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(255, 122, 26, 0.25);
     }
+
+    .card-img-wrapper {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      background: #000;
+    }
+
     .card img {
       width: 100%;
-      height: 140px;
+      height: 100%;
       object-fit: cover;
       display: block;
-      filter: saturate(1.05);
+      transition: transform 0.3s ease;
     }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
     .card-content {
-      padding: 12px 14px 16px;
+      padding: 16px;
     }
+
     .card h3 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-    }
-    .card p {
       margin: 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
+
+    .card p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
     footer {
       text-align: center;
       color: var(--muted);
-      padding: 20px 0 28px;
+      padding: 40px 0;
       border-top: 1px solid var(--card-border);
-      margin: 0 6vw;
+      margin: 40px 6vw 0;
       font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
-    @media (max-width: 1100px) {
-      .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     }
-    @media (max-width: 820px) {
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-    @media (max-width: 640px) {
-      header { padding: 20px 5vw; }
-      .brand { font-size: 2.2rem; }
-      .hero { padding: 30px 5vw 10px; }
-      .section-title { padding: 14px 5vw 8px; }
-      .grid { padding: 0 5vw 40px; grid-template-columns: 1fr; }
+    @media (max-width: 600px) {
+      .hero-header { padding: 70px 5vw 50px; }
+      .grid { padding: 0 5vw 30px; grid-template-columns: 1fr; gap: 16px; }
+      .section-title { padding: 40px 5vw 15px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      Henry Uglow <span>Racing</span>
-    </div>
+
+  <header class="hero-header">
     <p class="subtitle">Official Website</p>
+    <h1 class="brand">Henry Uglow <span>Racing</span></h1>
+    <p class="tagline">Check out every session at Wohlen since the karting journey began.</p>
   </header>
 
-  <div class="section-title">
-    <h2>Check out Henry's every session at Wohlen since the Karting journey began</h2>
-  </div>
+  <main>
+    <div class="section-title">
+      <h2>Season One 2025</h2>
+    </div>
 
-  <div class="section-title">
-    <h2>SEASON ONE 2025</h2>
-  </div>
+    <section class="grid" aria-label="Go kart session links for Season One">
+      <a class="card" href="https://photos.google.com/album/AF1QipOY2V4PS7a7O0shVgNzWmRTsZB1GDYEuImWI1jU" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session1.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 1 March 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 1 - March 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipNdj6C-6fk27q53dE1HeU4X3Rhv1OPsCjU9DcD7" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session2.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 2 March 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 2 - March 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipMhjtwsvHWHB25sikQ1l9tl-yg4kTYjfVl9Dhex" target="_blank" rel="noreferrer">  
+        <div class="card-img-wrapper">
+          <img src="images/S/Session3.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 3 April 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 3 - April 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipOnJ4q7fEj48NpPBj0GPpKxAytkcjH8JDWNsdFx" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session4.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 4 May 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 4 - May 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipN8XNJBfyWoaDc647sSfb82kqJUfj4KrmiR0tZt" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session5.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 5 May 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 5 - May 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipOfwps5PfJs00TnuiC8GgkCf7AYNKsjqViAHatR" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session6.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 6 June 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 6 - June 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipONNFWH-SK-zVuhKlNVfs3_Ku4Fx2PePGM4WVvp" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session7.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 7 June 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 7 - June 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipMgtLoGz4GTVDFvjp1WOBHpIz8Qj6j4mALsRm88" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session8.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 8 July 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 8 - July 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipPNp2gxSlMYugW4j1WuKLf83p67TRWXHkERRgYf" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session9.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 9 July 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 9 - July 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipPvLnyFbftaXOhxm9JzHJcM1vr5p66JWhIMnTtV" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session10.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 10 July 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 10 - July 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/share/AF1QipNTp89nWqh8sqYgMvbZrbzKOElGqAexp9b-vdyTsstf5qQkC_z3nKaAEeoVPIQ3MA?key=Qnpkb2l2WnFrY3psekl4TEI5Z3BINTd4M1J6X2VR" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session11.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 11 (Wet) August 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 11 - (Wet) August 2025</h3>
+          <p>1st time in the rain.</p>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipNlbWKao95lrCkgPLMDxub0-TpDNw0wOwze6K8o" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session12.png?auto=format&fit=crop&w=900&q=80" alt="Session 12 August 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 12 - August 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipPJyUDSxSgPcbxH0RMSH2IV0W4tI0PKeny5oH3v" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session13.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 13 August 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 13 - August 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipOgrbcfIQ6np8wD4defLVvneKxqlz31RnVVg8yb" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session14.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 14 August 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 14 - August 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipNBtrE5IuxjmGml0iRoyB_j27fdAlplrhbql6Ci" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session15.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 15 September 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 15 - September 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipMosw4SiA3yO74728rGrXwo4DSwzCX8ZogpbtBT" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session16.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 16 September 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 16 - September 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipP3BPbzhaEdpFwVCqWQyoJiQF7uEL-PmE_6H4aw" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session17.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 17 September 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 17 - September 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipMF7zVA20mDe6Q2AXsyqM4REcpPR-11orjkpJuZ" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session18.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 18 October 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 18 - October 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipOYbxDo-pLVYN-T9nZnI429UnlelJ1uAkaCxARm" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session19.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 19 October 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 19 - October 2025</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipMouB_wih9LWHllrEhArBo_IgE3CH45b_CghQ18" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session20.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 20 (Wet) October 2025">
+        </div>
+        <div class="card-content">
+          <h3>Session 20 - (Wet) October 2025</h3>
+          <p>2nd time in the rain.</p>
+        </div>
+      </a>
+    </section>
 
-  <section class="grid" aria-label="Go kart session links">
-    <a class="card" href="https://photos.google.com/album/AF1QipOY2V4PS7a7O0shVgNzWmRTsZB1GDYEuImWI1jU" target="_blank" rel="noreferrer">
-      <img src="images/S/Session1.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 1 March 2025">
-      <div class="card-content">
-        <h3>Session 1 - March 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipNdj6C-6fk27q53dE1HeU4X3Rhv1OPsCjU9DcD7" target="_blank" rel="noreferrer">
-      <img src="images/S/Session2.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 2 March 2025">
-      <div class="card-content">
-        <h3>Session 2 - March 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipMhjtwsvHWHB25sikQ1l9tl-yg4kTYjfVl9Dhex" target="_blank" rel="noreferrer">  
-      <img src="images/S/Session3.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 3 April 2025">
-      <div class="card-content">
-        <h3>Session 3 - April 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipOnJ4q7fEj48NpPBj0GPpKxAytkcjH8JDWNsdFx" target="_blank" rel="noreferrer">
-      <img src="images/S/Session4.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 4 May 2025">
-      <div class="card-content">
-        <h3>Session 4 - May 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipN8XNJBfyWoaDc647sSfb82kqJUfj4KrmiR0tZt" target="_blank" rel="noreferrer">
-      <img src="images/S/Session5.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 5 May 2025">
-      <div class="card-content">
-        <h3>Session 5 - May 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipOfwps5PfJs00TnuiC8GgkCf7AYNKsjqViAHatR" target="_blank" rel="noreferrer">
-      <img src="images/S/Session6.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 6 June 2025">
-      <div class="card-content">
-        <h3>Session 6 - June 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipONNFWH-SK-zVuhKlNVfs3_Ku4Fx2PePGM4WVvp" target="_blank" rel="noreferrer">
-      <img src="images/S/Session7.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 7 June 2025">
-      <div class="card-content">
-        <h3>Session 7 - June 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipMgtLoGz4GTVDFvjp1WOBHpIz8Qj6j4mALsRm88" target="_blank" rel="noreferrer">
-      <img src="images/S/Session8.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 8 July 2025">
-      <div class="card-content">
-        <h3>Session 8 - July 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipPNp2gxSlMYugW4j1WuKLf83p67TRWXHkERRgYf" target="_blank" rel="noreferrer">
-      <img src="images/S/Session9.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 9 July 2025">
-      <div class="card-content">
-        <h3>Session 9 - July 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipPvLnyFbftaXOhxm9JzHJcM1vr5p66JWhIMnTtV" target="_blank" rel="noreferrer">
-      <img src="images/S/Session10.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 10 July 2025">
-      <div class="card-content">
-        <h3>Session 10 - July 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/share/AF1QipNTp89nWqh8sqYgMvbZrbzKOElGqAexp9b-vdyTsstf5qQkC_z3nKaAEeoVPIQ3MA?key=Qnpkb2l2WnFrY3psekl4TEI5Z3BINTd4M1J6X2VR" target="_blank" rel="noreferrer">
-      <img src="images/S/Session11.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 11 (Wet) August 2025">
-      <div class="card-content">
-        <h3>Session 11 - (Wet) August 2025</h3>
-        <p>1st time in the rain.</p>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipNlbWKao95lrCkgPLMDxub0-TpDNw0wOwze6K8o" target="_blank" rel="noreferrer">
-      <img src="images/S/Session12.png?auto=format&fit=crop&w=900&q=80" alt="Session 12 August 2025">
-      <div class="card-content">
-        <h3>Session 12 - August 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipPJyUDSxSgPcbxH0RMSH2IV0W4tI0PKeny5oH3v" target="_blank" rel="noreferrer">
-      <img src="images/S/Session13.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 13 August 2025">
-      <div class="card-content">
-        <h3>Session 13 - August 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipOgrbcfIQ6np8wD4defLVvneKxqlz31RnVVg8yb" target="_blank" rel="noreferrer">
-      <img src="images/S/Session14.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 14 August 2025">
-      <div class="card-content">
-        <h3>Session 14 - August 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipNBtrE5IuxjmGml0iRoyB_j27fdAlplrhbql6Ci" target="_blank" rel="noreferrer">
-      <img src="images/S/Session15.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 15 September 2025">
-      <div class="card-content">
-        <h3>Session 15 - September 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipMosw4SiA3yO74728rGrXwo4DSwzCX8ZogpbtBT" target="_blank" rel="noreferrer">
-      <img src="images/S/Session16.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 16 September 2025">
-      <div class="card-content">
-        <h3>Session 16 - September 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipP3BPbzhaEdpFwVCqWQyoJiQF7uEL-PmE_6H4aw" target="_blank" rel="noreferrer">
-      <img src="images/S/Session17.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 17 September 2025">
-      <div class="card-content">
-        <h3>Session 17 - September 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipMF7zVA20mDe6Q2AXsyqM4REcpPR-11orjkpJuZ" target="_blank" rel="noreferrer">
-      <img src="images/S/Session18.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 18 October 2025">
-      <div class="card-content">
-        <h3>Session 18 - October 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipOYbxDo-pLVYN-T9nZnI429UnlelJ1uAkaCxARm" target="_blank" rel="noreferrer">
-      <img src="images/S/Session19.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 19 October 2025">
-      <div class="card-content">
-        <h3>Session 19 - October 2025</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipMouB_wih9LWHllrEhArBo_IgE3CH45b_CghQ18" target="_blank" rel="noreferrer">
-      <img src="images/S/Session20.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 20 (Wet) October 2025">
-      <div class="card-content">
-        <h3>Session 20 - (Wet) October 2025</h3>
-        <p>2nd time in the rain.</p>
-      </div>
-    </a>
-  </section>
+    <div class="section-title">
+      <h2>Season Two 2026</h2>
+    </div>
 
-  <div class="section-title">
-    <h2>SEASON TWO 2026</h2>
-  </div>
-
-  <section class="grid" aria-label="Go kart session links">
-    <a class="card" href="https://photos.google.com/album/AF1QipMvrWDgvT83ffBxhI90vZ9CDtpSVP48u5MIM5qL" target="_blank" rel="noreferrer">
-      <img src="images/S/Session21.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 21 March 2026">
-      <div class="card-content">
-        <h3>Session 21 - March 2026</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipNEXczgWf2HlWzXk3qp3Be_fSaoKPVHHiysaDGk" target="_blank" rel="noreferrer">
-      <img src="images/S/Session22.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 22 March 2026">
-      <div class="card-content">
-        <h3>Session 22 - March 2026</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipM0SPOZQqcvYkNUXpt2qDGptMgNBYkWGD0k9dvk" target="_blank" rel="noreferrer">
-      <img src="images/S/Session23.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 23 April 2026">
-      <div class="card-content">
-        <h3>Session 23 - April 2026</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipNpfvwJG4w6E49N-I6YJ__y_coeoW7GJoY-qpnf" target="_blank" rel="noreferrer">
-      <img src="images/S/Session24.JPG?auto=format&fit=crop&w=900&q=80" alt="Session 24 April 2026">
-      <div class="card-content">
-        <h3>Session 24 - April 2026</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipO_9Fr7zNudzyf4TqKROYUb_Vlw4PWKbsRlfLq1" target="_blank" rel="noreferrer">
-      <img src="images/S/Session25.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 25 April 2026">
-      <div class="card-content">
-        <h3>Session 25 - April 2026</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipPd0Lqm3vqkSplZTe4-RzRBB2VWz3hldnp8HmxK" target="_blank" rel="noreferrer">
-      <img src="images/S/Session26.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 26 May 2026">
-      <div class="card-content">
-        <h3>Session 26 - May 2026</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipNz2rG56jkON5x0ch4CJTvcw2U39U7k-nJzr4Cv" target="_blank" rel="noreferrer">
-      <img src="images/S/Session27.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 27 May 2026">
-      <div class="card-content">
-        <h3>Session 27 - May 2026</h3>
-      </div>
-    </a>
-    <a class="card" href="https://photos.google.com/album/AF1QipOZN-7WSvMrZVkwhxawXa0DbcWAeVCkSYfM2EhS" target="_blank" rel="noreferrer">
-      <img src="images/S/Session28.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 28 May 2026">
-      <div class="card-content">
-        <h3>Session 28 - May 2026</h3>
-      </div>
-    </a>
-  </section>  
+    <section class="grid" aria-label="Go kart session links for Season Two">
+      <a class="card" href="https://photos.google.com/album/AF1QipMvrWDgvT83ffBxhI90vZ9CDtpSVP48u5MIM5qL" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session21.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 21 March 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 21 - March 2026</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipNEXczgWf2HlWzXk3qp3Be_fSaoKPVHHiysaDGk" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session22.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 22 March 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 22 - March 2026</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipM0SPOZQqcvYkNUXpt2qDGptMgNBYkWGD0k9dvk" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session23.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 23 April 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 23 - April 2026</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipNpfvwJG4w6E49N-I6YJ__y_coeoW7GJoY-qpnf" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session24.JPG?auto=format&fit=crop&w=900&q=80" alt="Session 24 April 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 24 - April 2026</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipO_9Fr7zNudzyf4TqKROYUb_Vlw4PWKbsRlfLq1" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session25.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 25 April 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 25 - April 2026</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipPd0Lqm3vqkSplZTe4-RzRBB2VWz3hldnp8HmxK" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session26.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 26 May 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 26 - May 2026</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipNz2rG56jkON5x0ch4CJTvcw2U39U7k-nJzr4Cv" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session27.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 27 May 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 27 - May 2026</h3>
+        </div>
+      </a>
+      <a class="card" href="https://photos.google.com/album/AF1QipOZN-7WSvMrZVkwhxawXa0DbcWAeVCkSYfM2EhS" target="_blank" rel="noreferrer">
+        <div class="card-img-wrapper">
+          <img src="images/S/Session28.jpg?auto=format&fit=crop&w=900&q=80" alt="Session 28 May 2026">
+        </div>
+        <div class="card-content">
+          <h3>Session 28 - May 2026</h3>
+        </div>
+      </a>
+    </section>  
+  </main>
 
   <footer>
-    • Henry Uglow Racing •
+    &bull; Henry Uglow Racing &bull;
   </footer>
 </body>
 </html>
-
-
-
