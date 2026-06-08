@@ -31,7 +31,7 @@
     /* Hero Section with the background photo isolated at the top */
     .hero-header {
       position: relative;
-      padding: 100px 6vw 80px;
+      padding: 100px 6vw 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -72,7 +72,7 @@
 
     .tagline {
       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      max-width: 700px;
+      white-space:nowrap;
       color: #e5e7eb;
       font-weight: 600;
       line-height: 1.4;
@@ -81,7 +81,7 @@
 
     /* Clean Section Headings */
     .section-title {
-      padding: 60px 6vw 20px;
+      padding: 30px 6vw 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -192,9 +192,10 @@
       .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 600px) {
-      .hero-header { padding: 70px 5vw 50px; }
+      .hero-header { padding: 70px 5vw 30px; } /* Slightly tightened padding here too */
+      .tagline { white-space: normal; } /* Safely allows text-wrapping on mobile phones */
       .grid { padding: 0 5vw 30px; grid-template-columns: 1fr; gap: 16px; }
-      .section-title { padding: 40px 5vw 15px; }
+      .section-title { padding: 30px 5vw 15px; }
     }
   </style>
 </head>
